@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>포트폴리오 실습</title>
+</head>
+<body>
+
+
+  <!-- header -->
+  <header>
+    <div class="header__container">
+      <div class="header__pc--bg">
+        <div class="header__search">
+          <form action="" method="GET">
+            <input name="q" type="search" placeholder="Search">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="header__icon">
+          <ul>
+            <li><i class="fa-solid fa-bell"></i></li>
+          </ul>
+          <ul>
+            <li><i class="fa-solid fa-envelope"></i></li>
+          </ul>
+          <ul>
+            <li>Minny Park</li>
+          </ul>
+        </div>
+      </div>
+      <div class="header__burger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- nav -->
+  <div class="nav">
+    <nav class="nav__icon--container">
+      <div>
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-headphones"></i>
+        <span>Services</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-flag"></i>
+        <span>Alerts</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Stats</span>
+      </div>
+    </nav>
+  </div>
+
+  <!-- contents -->
+  <main>
+    <section class="main__dashboard--container">
+      <h2>Dashboard</h2>
+      <div class="main__dashboard">
+        <ul class="main__dashboard--1">
+          <li>
+            <div>Earnings (Monthly)</div>
+            <div>$400,000</div>
+          </li>
+          <li><i class="fa-solid fa-calendar"></i></li>
+        </ul>
+        <ul class="main__dashboard--2">
+          <li>
+            <div>Earnings (Annual)</div>
+            <div>$800,000</div>
+          </li>
+          <li><i class="fa-solid fa-dollar-sign"></i></li>
+        </ul>
+        <ul class="main__dashboard--3">
+          <li>
+            <div>Tasks</div>
+            <div>13</div>
+          </li>
+          <li><i class="fa-solid fa-list-check"></i></li>
+        </ul>
+        <ul class="main__dashboard--4">
+          <li>
+            <div>Requests</div>
+            <div>26</div>
+          </li>
+          <li><i class="fa-solid fa-comments"></i></li>
+        </ul>
+      </div>
+    </section>
+    <section class="main__bottom--container">
+      <!-- <div class="main__bottom--bg"> -->
+
+        <div class="main__chart">
+          <div class="main__bottom--header">
+            <h2>Earnings Overview</h2>
+            <div class="main__bottom--content main__bottom--chart">
+              <canvas id="myChart" class="myChart" height="80px"></canvas>
+              </div>
+          </div>
+        </div>
+        <div class="main__tasks">
+          <div class="main__bottom--header">
+            <h2>Tasks</h2>
+            <div class="main__bottom--content main__bottom--list">
+              <ul>
+                <li>
+                  <div>Borrowed litems</div>
+                  <div>14</div>
+                </li>
+                <li>
+                  <div>Trello requests</div>
+                  <div>2</div>
+                </li>
+                <li>
+                  <div>Marked Comments</div>
+                  <div>1</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      <!-- </div> -->
+      
+    </section>
+  </main>
+
+  <div style="margin:500px 0px 500px 0px; width:100px; height:100px;"></div>
+
+  <!-- <div style=" background-color: rgb(192, 211, 190); width:100%; height:300px;"></div> -->
+
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: '# of Votes',
+                data: [0, 10, 5, 3, 20, 30, 45],
+                backgroundColor: '#484bb3',
+                borderColor: '484bb3',
+                borderWidth: 1,
+                fill : true
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+ 
+  
+</body>
+</html>
